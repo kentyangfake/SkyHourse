@@ -5,18 +5,29 @@ import NFTMarketplace from "views/admin/marketplace";
 // Auth Imports
 
 // Icon Imports
-import { MdHome, MdOutlineShoppingCart } from "react-icons/md";
+import {
+  MdHome,
+  MdOutlineChargingStation,
+  MdOutlineShoppingCart,
+} from "react-icons/md";
 
 const routes = [
   {
-    name: "電網系統資訊",
+    name: "電網系統",
     layout: "/admin",
     path: "default",
     icon: <MdHome className="h-6 w-6" />,
     component: <MainDashboard />,
   },
   {
-    name: "NFT Marketplace",
+    name: "儲能系統",
+    layout: "/admin",
+    path: "PCS",
+    icon: <MdOutlineChargingStation className="h-6 w-6" />,
+    component: <MainDashboard />,
+  },
+  {
+    name: "Marketplace",
     layout: "/admin",
     path: "nft-marketplace",
     icon: <MdOutlineShoppingCart className="h-6 w-6" />,

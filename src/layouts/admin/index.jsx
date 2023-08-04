@@ -1,8 +1,8 @@
-import React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import Footer from "components/footer/Footer";
 import Navbar from "components/navbar";
 import Sidebar from "components/sidebar";
-import Footer from "components/footer/Footer";
+import React from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import routes from "routes.js";
 
 export default function Admin(props) {
@@ -64,7 +64,7 @@ export default function Admin(props) {
       <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
         {/* Main Content */}
         <main
-          className={`mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]`}
+          className={`mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[250px]`}
         >
           {/* Routes */}
           <div className="h-full">

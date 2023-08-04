@@ -1,14 +1,13 @@
-import CardMenu from "components/card/CardMenu";
 import Card from "components/card";
+import CardMenu from "components/card/CardMenu";
+import { useMemo } from "react";
+import { MdCancel, MdCheckCircle, MdOutlineError } from "react-icons/md";
 import {
   useGlobalFilter,
   usePagination,
   useSortBy,
   useTable,
 } from "react-table";
-import { MdCheckCircle, MdCancel, MdOutlineError } from "react-icons/md";
-import { useMemo } from "react";
-import Progress from "components/progress";
 const ComplexTable = (props) => {
   const { columnsData, tableData } = props;
 
@@ -39,7 +38,7 @@ const ComplexTable = (props) => {
     <Card extra={"w-full h-full p-4 sm:overflow-x-auto"}>
       <div class="relative flex items-center justify-between">
         <div class="text-xl font-bold text-navy-700 dark:text-white">
-          Complex Table
+          {props.header}
         </div>
         <CardMenu />
       </div>
@@ -70,7 +69,7 @@ const ComplexTable = (props) => {
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
-                    if (cell.column.Header === "NAME") {
+                    if (cell.column.Header === "警告資訊") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}
@@ -93,14 +92,6 @@ const ComplexTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "DATE") {
-                      data = (
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">
-                          {cell.value}
-                        </p>
-                      );
-                    } else if (cell.column.Header === "PROGRESS") {
-                      data = <Progress width="w-[68px]" value={cell.value} />;
                     }
                     return (
                       <td

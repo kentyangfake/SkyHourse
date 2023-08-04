@@ -1,18 +1,19 @@
 import CheckTable from "./components/CheckTable";
 
-import {
-  columnsDataDevelopment,
-  columnsDataCheck,
-  columnsDataColumns,
-  columnsDataComplex,
-} from "./variables/columnsData";
-import tableDataDevelopment from "./variables/tableDataDevelopment.json";
-import tableDataCheck from "./variables/tableDataCheck.json";
-import tableDataColumns from "./variables/tableDataColumns.json";
-import tableDataComplex from "./variables/tableDataComplex.json";
-import DevelopmentTable from "./components/DevelopmentTable";
-import ColumnsTable from "./components/ColumnsTable";
 import ComplexTable from "./components/ComplexTable";
+import DevelopmentTable from "./components/DevelopmentTable";
+import {
+  columnsDataCheck,
+  columnsDataComplex,
+  columnsDataComplex1,
+  columnsDataComplex2,
+  columnsDataComplex3,
+  columnsDataDevelopment,
+} from "./variables/columnsData";
+import tableDataCheck from "./variables/tableDataCheck.json";
+import tableDataComplex from "./variables/tableDataComplex.json";
+import tableDataComplex1 from "./variables/tableDataComplex1.json";
+import tableDataDevelopment from "./variables/tableDataDevelopment.json";
 
 const Tables = () => {
   return (
@@ -26,14 +27,30 @@ const Tables = () => {
       </div>
 
       <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
-        <ColumnsTable
+        {/* <ColumnsTable
           columnsData={columnsDataColumns}
           tableData={tableDataColumns}
-        />
+        /> */}
 
         <ComplexTable
+          header={"BMS系統"}
           columnsData={columnsDataComplex}
           tableData={tableDataComplex}
+        />
+        <ComplexTable
+          header={"電池櫃一號"}
+          columnsData={columnsDataComplex1}
+          tableData={tableDataComplex1}
+        />
+        <ComplexTable
+          header={"電池櫃二號"}
+          columnsData={columnsDataComplex2}
+          tableData={tableDataComplex1}
+        />
+        <ComplexTable
+          header={"電池櫃三號"}
+          columnsData={columnsDataComplex3}
+          tableData={tableDataComplex1}
         />
       </div>
     </div>

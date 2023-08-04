@@ -1,6 +1,8 @@
 // Admin Imports
 import MainDashboard from "views/admin/default";
 import NFTMarketplace from "views/admin/marketplace";
+import Profile from "views/admin/profile";
+import DataTables from "views/admin/tables";
 
 // Auth Imports
 
@@ -9,6 +11,7 @@ import {
   MdHome,
   MdOutlineChargingStation,
   MdOutlineShoppingCart,
+  MdPerson,
 } from "react-icons/md";
 
 const routes = [
@@ -22,9 +25,9 @@ const routes = [
   {
     name: "儲能系統",
     layout: "/admin",
-    path: "PCS",
     icon: <MdOutlineChargingStation className="h-6 w-6" />,
-    component: <MainDashboard />,
+    path: "data-tables",
+    component: <DataTables />,
   },
   {
     name: "Marketplace",
@@ -34,20 +37,13 @@ const routes = [
     component: <NFTMarketplace />,
     secondary: true,
   },
-  // {
-  //   name: "Data Tables",
-  //   layout: "/admin",
-  //   icon: <MdBarChart className="h-6 w-6" />,
-  //   path: "data-tables",
-  //   component: <DataTables />,
-  // },
-  // {
-  //   name: "Profile",
-  //   layout: "/admin",
-  //   path: "profile",
-  //   icon: <MdPerson className="h-6 w-6" />,
-  //   component: <Profile />,
-  // },
+  {
+    name: "Profile",
+    layout: "/admin",
+    path: "profile",
+    icon: <MdPerson className="h-6 w-6" />,
+    component: <Profile />,
+  },
   // {
   //   name: "Sign In",
   //   layout: "/auth",

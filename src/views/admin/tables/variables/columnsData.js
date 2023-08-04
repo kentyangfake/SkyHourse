@@ -3,10 +3,10 @@ export const columnsDataDevelopment = [
     Header: "NAME",
     accessor: "name",
   },
-  {
-    Header: "TECH",
-    accessor: "tech",
-  },
+  // {
+  //   Header: "TECH",
+  //   accessor: "tech",
+  // },
   {
     Header: "DATE",
     accessor: "date",
@@ -57,19 +57,44 @@ export const columnsDataColumns = [
 
 export const columnsDataComplex = [
   {
-    Header: "NAME",
+    Header: "警告資訊",
     accessor: "name",
   },
   {
     Header: "STATUS",
     accessor: "status",
   },
+];
+
+export const columnsDataComplex1 = [
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "警告資訊",
+    accessor: "name",
   },
   {
-    Header: "PROGRESS",
-    accessor: "progress",
+    Header: "STATUS",
+    accessor: "status",
+  },
+];
+
+export const columnsDataComplex2 = [
+  {
+    Header: "警告資訊",
+    accessor: "name",
+  },
+  {
+    Header: "STATUS",
+    accessor: "status",
+  },
+];
+
+export const columnsDataComplex3 = [
+  {
+    Header: "警告資訊",
+    accessor: "name",
+  },
+  {
+    Header: "STATUS",
+    accessor: "status",
   },
 ];

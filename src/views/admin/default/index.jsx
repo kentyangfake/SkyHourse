@@ -6,6 +6,7 @@ import PieChartCard from "views/admin/default/components/PieChartCard";
 import TotalSpent from "views/admin/default/components/TotalSpent";
 import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
 import Card from "../../../components/card";
+import RadialChart from "./components/radialChart";
 
 import { columnsDataCheck, columnsDataComplex } from "./variables/columnsData";
 
@@ -58,6 +59,9 @@ const Dashboard = () => {
           <div className="rounded-lg bg-green-300 px-3 py-2 text-xs font-bold uppercase text-white transition duration-200 dark:bg-green-400">
             Default
           </div>
+        </Card>
+        <Card extra="flex flex-grow h-40 items-center rounded-[20px]">
+          <RadialChart />
         </Card>
       </div>
 

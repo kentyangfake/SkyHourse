@@ -15,7 +15,7 @@ class RadialChart extends Component {
             startAngle: -90,
             endAngle: 90,
             track: {
-              background: "#666",
+              background: "#333",
               startAngle: -90,
               endAngle: 90,
             },
@@ -24,21 +24,19 @@ class RadialChart extends Component {
                 show: false,
               },
               value: {
-                fontSize: "25px",
+                fontSize: "20px",
                 fontWeight: "bold",
-                color: "#4ade80",
                 show: true,
               },
             },
           },
         },
         fill: {
-          colors: ["#86efac"],
           type: "gradient",
           gradient: {
             shade: "dark",
             type: "horizontal",
-            gradientToColors: ["#4ade80"],
+            gradientToColors: ["#87D4F9"],
             stops: [0, 100],
           },
         },
@@ -51,11 +49,12 @@ class RadialChart extends Component {
 
   render() {
     return (
-      <div className="-mt-5 -ml-10">
+      <div className="flex">
         <Chart
           options={this.state.options}
           series={this.props.value}
           type="radialBar"
+          colors="#20E647"
         />
       </div>
     );

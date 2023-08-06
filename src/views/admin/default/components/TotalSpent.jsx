@@ -1,10 +1,6 @@
 import Card from "components/card";
 import LineChart from "components/charts/LineChart";
-import {
-  MdArrowDropUp,
-  MdBarChart,
-  MdOutlineCalendarToday,
-} from "react-icons/md";
+import { MdOutlineCalendarToday } from "react-icons/md";
 import {
   lineChartDataTotalSpent,
   lineChartOptionsTotalSpent,
@@ -12,37 +8,46 @@ import {
 
 const TotalSpent = () => {
   return (
-    <Card extra="!p-[20px] mt-12 h-[450px] text-center">
-      <div className="flex justify-between">
+    <Card extra="!p-[20px] mt-5 h-[450px] text-center">
+      <div className="flex flex-col md:!flex-row md:justify-between">
         <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
           <MdOutlineCalendarToday />
-          <span className="text-sm font-medium text-gray-600">This month</span>
+          <span className="text-sm font-medium text-gray-600">2023-8-6</span>
         </button>
-        <button className="!linear z-[1] flex items-center justify-center rounded-lg bg-lightPrimary p-2 text-brand-500 !transition !duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10">
-          <MdBarChart className="h-6 w-6" />
-        </button>
+        <div className="flex gap-3 md:gap-5">
+          <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
+            <span className="text-sm font-medium text-gray-600">15 min</span>
+          </button>
+          <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
+            <span className="text-sm font-medium text-gray-600">30 min</span>
+          </button>
+          <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
+            <span className="text-sm font-medium text-gray-600">1 hr</span>
+          </button>
+          <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
+            <span className="text-sm font-medium text-gray-600">3 hr</span>
+          </button>
+          <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
+            <span className="text-sm font-medium text-gray-600">6 hr</span>
+          </button>
+          <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
+            <span className="text-sm font-medium text-gray-600">9 hr</span>
+          </button>
+          <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">
+            <span className="text-sm font-medium text-gray-600">12 hr</span>
+          </button>
+        </div>
       </div>
 
-      <div className="flex h-full w-full flex-row justify-between sm:flex-wrap lg:flex-nowrap 2xl:overflow-hidden">
-        <div className="flex flex-col">
-          <p className="mt-[20px] text-3xl font-bold text-navy-700 dark:text-white">
-            $37.5K
-          </p>
-          <div className="flex flex-col items-start">
-            <p className="mt-2 text-sm text-gray-600">Total Spent</p>
-            <div className="flex flex-row items-center justify-center">
-              <MdArrowDropUp className="font-medium text-green-500" />
-              <p className="text-sm font-bold text-green-500"> +2.45% </p>
-            </div>
+      <div className="flex h-full w-full sm:flex-wrap lg:flex-nowrap 2xl:overflow-hidden">
+        <div className="flex h-full w-full flex-col">
+          <div className="h-full w-full">
+            <LineChart
+              options={lineChartOptionsTotalSpent}
+              series={lineChartDataTotalSpent}
+            />
           </div>
         </div>
-        <div className="h-full w-full">
-          <LineChart
-            options={lineChartOptionsTotalSpent}
-            series={lineChartDataTotalSpent}
-          />
-        </div>
-        <div className="mt-[20px] flex w-12 flex-col">指標</div>
       </div>
     </Card>
   );

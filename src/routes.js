@@ -1,8 +1,10 @@
 // Admin Imports
+import BackupDashboard from "views/admin/backup";
+import Bms from "views/admin/bms";
 import MainDashboard from "views/admin/default";
 import NFTMarketplace from "views/admin/marketplace";
+import Pcs from "views/admin/pcs";
 import Profile from "views/admin/profile";
-import DataTables from "views/admin/tables";
 
 // Auth Imports
 
@@ -23,11 +25,25 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: "儲能系統",
+    name: "BMS",
     layout: "/admin",
     icon: <MdOutlineChargingStation className="h-6 w-6" />,
-    path: "data-tables",
-    component: <DataTables />,
+    path: "bms",
+    component: <Bms />,
+  },
+  {
+    name: "PCS",
+    layout: "/admin",
+    icon: <MdOutlineChargingStation className="h-6 w-6" />,
+    path: "pcs",
+    component: <Pcs />,
+  },
+  {
+    name: "備用控制台",
+    layout: "/admin",
+    path: "backup",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <BackupDashboard />,
   },
   {
     name: "Marketplace",

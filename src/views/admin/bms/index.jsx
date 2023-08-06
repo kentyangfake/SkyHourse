@@ -15,7 +15,7 @@ import tableDataComplex from "./variables/tableDataComplex.json";
 import tableDataComplex1 from "./variables/tableDataComplex1.json";
 import tableDataDevelopment from "./variables/tableDataDevelopment.json";
 
-const Tables = () => {
+const Bms = () => {
   return (
     <div>
       <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
@@ -57,4 +57,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default Bms;

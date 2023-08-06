@@ -1,109 +1,108 @@
-import MiniCalendar from "components/calendar/MiniCalendar";
-import { IoMdHome } from "react-icons/io";
 import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
-import PieChartCard from "views/admin/default/components/PieChartCard";
 import TotalSpent from "views/admin/default/components/TotalSpent";
-import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
 import Card from "../../../components/card";
 import RadialChart from "./components/radialChart";
 
-import { columnsDataCheck, columnsDataComplex } from "./variables/columnsData";
-
 import Widget from "components/widget/Widget";
-import CheckTable from "views/admin/default/components/CheckTable";
-import ComplexTable from "views/admin/default/components/ComplexTable";
-import DailyTraffic from "views/admin/default/components/DailyTraffic";
-import TaskCard from "views/admin/default/components/TaskCard";
-import tableDataCheck from "./variables/tableDataCheck.json";
-import tableDataComplex from "./variables/tableDataComplex.json";
 
 const Dashboard = () => {
   return (
     <div>
-      {/* Card widget */}
+      <div className="my-5 flex w-full flex-col flex-wrap md:flex-row">
+        {/* 主pannel */}
+        <Card extra="flex items-center rounded-[20px] pt-5 pl-5 lg:pt-7 lg:pl-7">
+          <div className="grid grid-cols-2 gap-y-7">
+            <div className="h-50 flex w-auto flex-col justify-center">
+              <p className="font-dm text-sm font-medium text-gray-600">
+                電池狀態
+              </p>
+              <h4 className="text-xl font-black text-green-500">正常</h4>
+            </div>
 
-      <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
+            <div className="h-50 flex w-auto flex-col justify-center">
+              <p className="font-dm text-sm font-medium text-gray-600">
+                電池溫度
+              </p>
+              <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+                20 ℃
+              </h4>
+            </div>
+
+            <div className="flex flex-col">
+              <p className="font-dm text-sm font-medium text-gray-600">
+                總電池電量 SOC
+              </p>
+              <RadialChart value={[67]} />
+            </div>
+
+            <div className="flex flex-col">
+              <p className="font-dm text-sm font-medium text-gray-600">
+                電池 SOH
+              </p>
+              <RadialChart value={[92]} />
+            </div>
+          </div>
+        </Card>
+        {/* ESS */}
+        <Card extra="flex flex-grow items-center rounded-[20px] py-5 pl-5 lg:py-7 lg:pl-7 mt-5 md:mt-0 md:ml-5">
+          <div className="grid w-full grid-cols-3 gap-7 md:grid-cols-1">
+            <div className="h-50 flex w-auto flex-col justify-center">
+              <p className="font-dm text-sm font-medium text-gray-600">
+                ESS 運轉狀態
+              </p>
+              <h4 className="text-xl font-black text-green-500">正常 </h4>
+            </div>
+
+            <div className="h-50 flex w-auto flex-col justify-center">
+              <p className="font-dm text-sm font-medium text-gray-600">
+                控制器狀態
+              </p>
+              <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+                執行停止程序
+              </h4>
+            </div>
+
+            <div className="h-50 flex w-auto flex-col justify-center">
+              <p className="font-dm text-sm font-medium text-gray-600">
+                執行功能
+              </p>
+              <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+                待命
+              </h4>
+            </div>
+          </div>
+        </Card>
+      </div>
+      {/* Card widget */}
+      <div className="mt-12 text-base font-bold text-gray-700">
+        電網即時運作曲線圖
+      </div>
+      <div className="mt-3 grid grid-cols-2 gap-5 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 3xl:grid-cols-6">
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={"Earnings"}
-          subtitle={"$340.5"}
+          title={"場域負載功率"}
+          subtitle={"5129 kW"}
         />
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
-          title={"Spend this month"}
-          subtitle={"$642.39"}
+          title={"台電頻率"}
+          subtitle={"59.91 Hz"}
         />
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={"Sales"}
-          subtitle={"$574.34"}
+          title={"充放電功率"}
+          subtitle={"0 kW"}
         />
         <Widget
           icon={<MdDashboard className="h-6 w-6" />}
-          title={"Your Balance"}
-          subtitle={"$1,000"}
+          title={"sReg 投標值"}
+          subtitle={"1000 kW"}
         />
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={"New Tasks"}
-          subtitle={"145"}
-        />
-        <Widget
-          icon={<IoMdHome className="h-6 w-6" />}
-          title={"Total Projects"}
-          subtitle={"$2433"}
-        />
-        <Card extra="flex flex-grow h-40 items-center rounded-[20px]">
-          <div>電池運作</div>
-          <div className="rounded-lg bg-green-300 px-3 py-2 text-xs font-bold uppercase text-white transition duration-200 dark:bg-green-400">
-            Default
-          </div>
-        </Card>
-        <Card extra="flex flex-grow h-40 items-center rounded-[20px]">
-          <RadialChart />
-        </Card>
       </div>
 
       {/* Charts */}
       <TotalSpent />
-      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2"></div>
-
-      {/* Tables & Charts */}
-
-      <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2">
-        {/* Check Table */}
-        <WeeklyRevenue />
-        <div>
-          <CheckTable
-            columnsData={columnsDataCheck}
-            tableData={tableDataCheck}
-          />
-        </div>
-
-        {/* Traffic chart & Pie Chart */}
-
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <DailyTraffic />
-          <PieChartCard />
-        </div>
-
-        {/* Complex Table , Task & Calendar */}
-
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        />
-
-        {/* Task chart & Calendar */}
-
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <TaskCard />
-          <div className="grid grid-cols-1 rounded-[20px]">
-            <MiniCalendar />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

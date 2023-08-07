@@ -45,7 +45,7 @@ const Dashboard = () => {
           </div>
         </Card>
         {/* ESS */}
-        <Card extra="flex flex-grow items-center rounded-[20px] py-5 pl-5 lg:py-7 lg:pl-7 mt-5 md:mt-0 md:ml-5">
+        <Card extra="flex items-center rounded-[20px] py-5 pl-5 pr-9 lg:py-7 lg:pl-7 mt-5 md:mt-0 md:ml-5">
           <div className="grid w-full grid-cols-3 gap-7 md:grid-cols-1">
             <div className="h-50 flex w-auto flex-col justify-center">
               <p className="font-dm text-sm font-medium text-gray-600">

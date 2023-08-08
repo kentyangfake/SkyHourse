@@ -79,7 +79,7 @@ const ComplexTable = (props) => {
                       data = (
                         <div className="flex items-center gap-2">
                           <div className={`rounded-full text-xl`}>
-                            {cell.value === "Approved" ? (
+                            {cell.value === "Normal" ? (
                               <MdCheckCircle className="text-green-500" />
                             ) : cell.value === "Disable" ? (
                               <MdCancel className="text-red-500" />

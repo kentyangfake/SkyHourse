@@ -59,7 +59,7 @@ const Dashboard = () => {
                 控制器狀態
               </p>
               <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-                執行停止程序
+                停止程序
               </h4>
             </div>
 

@@ -1,7 +1,7 @@
 [
   {
     "name": "BMS 系統警告 (w/ deg)",
-    "status": "Approved",
+    "status": "Normal",
     "date": "24.Jan.2021",
     "progress": 30
   },
@@ -19,7 +19,7 @@
   },
   {
     "name": "BMS 系統警告 (w/o deg)-3",
-    "status": "Approved",
+    "status": "Normal",
     "date": "12.Jul.2021",
     "progress": 30
   }

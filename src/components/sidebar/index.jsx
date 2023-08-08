@@ -1,6 +1,6 @@
 /* eslint-disable */
-
 import { HiX } from "react-icons/hi";
+import { SiFitbit } from "react-icons/si";
 import Links from "./components/Links";
 
 import routes from "routes.js";
@@ -19,12 +19,13 @@ const Sidebar = ({ open, onClose }) => {
         <HiX />
       </span>
 
-      <div className={`mx-[56px] mt-[50px] flex items-center`}>
-        <div className="mt-1 ml-1 h-2.5 font-poppins text-[26px] font-bold uppercase text-navy-700 dark:text-white">
-          天馬
+      <div className={`-ml-8 mt-8 flex items-center justify-center`}>
+        <SiFitbit className="h-6 w-6 text-brand-700" />
+        <div className="ml-2 text-2xl font-bold tracking-widest text-brand-700 dark:text-white">
+          天馬<span className=" font-light">儲能</span>
         </div>
       </div>
-      <div class="mt-[58px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
+      <div class="mt-8 mb-7 h-px bg-gray-300 dark:bg-white/30" />
       {/* Nav item */}
 
       <ul className="mb-auto pt-1">

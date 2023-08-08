@@ -1,20 +1,12 @@
 // Admin Imports
-import BackupDashboard from "views/admin/backup";
 import Bms from "views/admin/bms";
 import MainDashboard from "views/admin/default";
-import NFTMarketplace from "views/admin/marketplace";
 import Pcs from "views/admin/pcs";
-import Profile from "views/admin/profile";
 
 // Auth Imports
 
 // Icon Imports
-import {
-  MdHome,
-  MdOutlineChargingStation,
-  MdOutlineShoppingCart,
-  MdPerson,
-} from "react-icons/md";
+import { MdHome, MdOutlineChargingStation } from "react-icons/md";
 
 const routes = [
   {
@@ -25,41 +17,41 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: "BMS",
+    name: "電池管理BMS",
     layout: "/admin",
     icon: <MdOutlineChargingStation className="h-6 w-6" />,
     path: "bms",
     component: <Bms />,
   },
   {
-    name: "PCS",
+    name: "電力轉換器PCS",
     layout: "/admin",
     icon: <MdOutlineChargingStation className="h-6 w-6" />,
     path: "pcs",
     component: <Pcs />,
   },
-  {
-    name: "備用控制台",
-    layout: "/admin",
-    path: "backup",
-    icon: <MdHome className="h-6 w-6" />,
-    component: <BackupDashboard />,
-  },
-  {
-    name: "Marketplace",
-    layout: "/admin",
-    path: "nft-marketplace",
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
-    component: <NFTMarketplace />,
-    secondary: true,
-  },
-  {
-    name: "Profile",
-    layout: "/admin",
-    path: "profile",
-    icon: <MdPerson className="h-6 w-6" />,
-    component: <Profile />,
-  },
+  // {
+  //   name: "備用控制台",
+  //   layout: "/admin",
+  //   path: "backup",
+  //   icon: <MdHome className="h-6 w-6" />,
+  //   component: <BackupDashboard />,
+  // },
+  // {
+  //   name: "Marketplace",
+  //   layout: "/admin",
+  //   path: "nft-marketplace",
+  //   icon: <MdOutlineShoppingCart className="h-6 w-6" />,
+  //   component: <NFTMarketplace />,
+  //   secondary: true,
+  // },
+  // {
+  //   name: "Profile",
+  //   layout: "/admin",
+  //   path: "profile",
+  //   icon: <MdPerson className="h-6 w-6" />,
+  //   component: <Profile />,
+  // },
   // {
   //   name: "Sign In",
   //   layout: "/auth",

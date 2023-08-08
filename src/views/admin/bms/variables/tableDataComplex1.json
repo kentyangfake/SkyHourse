@@ -1,25 +1,25 @@
 [
   {
     "name": "With Degree",
-    "status": "Approved",
+    "status": "Normal",
     "date": "24.Jan.2021",
     "progress": 30
   },
   {
     "name": "Without Degree - 1",
-    "status": "Disable",
+    "status": "Normal",
     "date": "30.Dec.2021",
     "progress": 30
   },
   {
     "name": "Without Degree - 2",
-    "status": "Error",
+    "status": "Normal",
     "date": "20.May.2021",
     "progress": 30
   },
   {
     "name": "Without Degree - 3",
-    "status": "Approved",
+    "status": "Normal",
     "date": "12.Jul.2021",
     "progress": 30
   }
